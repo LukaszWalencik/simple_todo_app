@@ -24,6 +24,14 @@ class MainApp extends StatelessWidget {
         body: const Center(
           child: Text('Hello World!'),
         ),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.purple,
+          onPressed: () {},
+          child: const Icon(
+            Icons.add,
+            color: Colors.white,
+          ),
+        ),
       ),
     );
   }
