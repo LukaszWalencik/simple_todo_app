@@ -24,7 +24,12 @@ class ReusableListTile extends StatelessWidget {
           style: const TextStyle(
               fontWeight: FontWeight.bold, fontSize: 22, color: Colors.white),
         ),
-        subtitle: subtitle != null ? Text(subtitle!) : null,
+        subtitle: subtitle != null
+            ? Text(
+                subtitle!,
+                style: const TextStyle(fontSize: 18, color: Colors.white),
+              )
+            : null,
       ),
     );
   }
