@@ -2,14 +2,14 @@
 import 'package:flutter/material.dart';
 
 class ReusableListTile extends StatelessWidget {
+  final String number;
   final String title;
   final String? subtitle;
-  final String number;
   const ReusableListTile({
     super.key,
+    required this.number,
     required this.title,
     this.subtitle,
-    required this.number,
   });
 
   @override
@@ -18,7 +18,11 @@ class ReusableListTile extends StatelessWidget {
       margin: const EdgeInsets.all(8),
       color: Colors.grey[800],
       child: ListTile(
-        leading: Text(number),
+        leading: Text(
+          '#$number',
+          style: TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 22, color: Colors.white),
+        ),
         title: Text(
           title,
           style: const TextStyle(
