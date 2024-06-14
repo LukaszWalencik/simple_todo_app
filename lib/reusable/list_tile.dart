@@ -3,15 +3,21 @@ import 'package:flutter/material.dart';
 
 class ReusableListTile extends StatelessWidget {
   final String title;
+  final String? subtitle;
+  final String number;
   const ReusableListTile({
     super.key,
     required this.title,
+    this.subtitle,
+    required this.number,
   });
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(title),
-    );
+        leading: Text(number),
+        title: Text(
+          title,
+        ));
   }
 }
