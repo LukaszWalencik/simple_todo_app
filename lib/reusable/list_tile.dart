@@ -15,18 +15,31 @@ class ReusableListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
+          border: Border.all(
+            color: Colors.black,
+            width: 3,
+          ),
+          color: Colors.grey[600]),
       margin: const EdgeInsets.all(8),
-      color: Colors.grey[800],
+      // color: Colors.grey[800],
       child: ListTile(
         leading: Text(
           '#$number',
-          style: TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 22, color: Colors.white),
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 22,
+            color: Colors.white,
+          ),
         ),
         title: Text(
           title,
           style: const TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 22, color: Colors.white),
+            fontWeight: FontWeight.bold,
+            fontSize: 22,
+            color: Colors.white,
+          ),
         ),
         subtitle: subtitle != null
             ? Text(
