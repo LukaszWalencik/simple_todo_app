@@ -45,7 +45,17 @@ class HomeScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.purple,
-        onPressed: () {},
+        onPressed: () {
+          showDialog(
+              context: context,
+              builder: (context) => Dialog(
+                    child: Container(
+                      width: 400,
+                      height: 400,
+                      color: Colors.red,
+                    ),
+                  ));
+        },
         child: const Icon(
           Icons.add,
           color: Colors.white,
