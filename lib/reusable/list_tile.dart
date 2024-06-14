@@ -21,6 +21,8 @@ class ReusableListTile extends StatelessWidget {
         leading: Text(number),
         title: Text(
           title,
+          style: const TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 22, color: Colors.white),
         ),
       ),
     );
