@@ -14,10 +14,15 @@ class ReusableListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
+    return Container(
+      margin: const EdgeInsets.all(8),
+      color: Colors.grey[800],
+      child: ListTile(
         leading: Text(number),
         title: Text(
           title,
-        ));
+        ),
+      ),
+    );
   }
 }
