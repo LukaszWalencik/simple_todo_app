@@ -10,7 +10,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> titles = ['first title', 'seccond titile'];
     List<Map<String, dynamic>> mapTiles = [
       {
         'number': '1',
@@ -40,17 +39,15 @@ class MainApp extends StatelessWidget {
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
         ),
-        body: ListView(
-          children: [
-            ReusableListTile(
-              number: '',
-              title: titles[0],
-            ),
-            ReusableListTile(
-              number: '',
-              title: titles[1],
-            )
-          ],
+        body: ListView.builder(
+          itemCount: mapTiles.length,
+          itemBuilder: (context, index) {
+            return ReusableListTile(
+              number: mapTiles[index]['number'],
+              title: mapTiles[index]['title'],
+              subtitle: mapTiles[index]['subtitle'],
+            );
+          },
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.purple,
