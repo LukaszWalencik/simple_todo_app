@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simple_todo_app/main.dart';
 import 'package:simple_todo_app/reusable/list_tile.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -59,6 +60,13 @@ class HomeScreen extends StatelessWidget {
                 ),
                 width: MediaQuery.of(context).size.width * 0.8,
                 height: MediaQuery.of(context).size.height * 0.8,
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 20),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [],
+                  ),
+                ),
               ),
             ),
           );
