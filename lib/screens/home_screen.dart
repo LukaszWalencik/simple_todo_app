@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:simple_todo_app/main.dart';
 import 'package:simple_todo_app/reusable/list_tile.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -76,6 +75,17 @@ class HomeScreen extends StatelessWidget {
                         decoration: InputDecoration(
                           icon: Icon(Icons.keyboard_rounded),
                           labelText: 'What we need to do?',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(20),
+                            ),
+                          ),
+                        ),
+                      ),
+                      TextField(
+                        decoration: InputDecoration(
+                          icon: Icon(Icons.question_mark_rounded),
+                          labelText: 'More descryption',
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.all(
                               Radius.circular(20),
