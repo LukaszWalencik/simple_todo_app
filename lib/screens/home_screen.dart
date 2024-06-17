@@ -64,7 +64,15 @@ class HomeScreen extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 20),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
-                    children: [],
+                    children: [
+                      Text(
+                        'Add new task!',
+                        style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black),
+                      ),
+                    ],
                   ),
                 ),
               ),
