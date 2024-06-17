@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:simple_todo_app/reusable/list_tile.dart';
 import 'package:simple_todo_app/screens/home_screen.dart';
 
 void main() {

@@ -47,14 +47,21 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.purple,
         onPressed: () {
           showDialog(
-              context: context,
-              builder: (context) => Dialog(
-                    child: Container(
-                      width: 400,
-                      height: 400,
-                      color: Colors.red,
-                    ),
-                  ));
+            context: context,
+            builder: (context) => Dialog(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.grey[300],
+                  border: Border.all(color: Colors.black, width: 5),
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(20),
+                  ),
+                ),
+                width: MediaQuery.of(context).size.width * 0.8,
+                height: MediaQuery.of(context).size.height * 0.8,
+              ),
+            ),
+          );
         },
         child: const Icon(
           Icons.add,

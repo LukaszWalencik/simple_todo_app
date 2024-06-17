@@ -19,7 +19,7 @@ class ReusableListTile extends StatelessWidget {
           borderRadius: const BorderRadius.all(Radius.circular(20)),
           border: Border.all(
             color: Colors.black,
-            width: 3,
+            width: 5,
           ),
           color: Colors.grey[600]),
       margin: const EdgeInsets.all(8),
