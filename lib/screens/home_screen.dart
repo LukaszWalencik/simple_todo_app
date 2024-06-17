@@ -72,6 +72,17 @@ class HomeScreen extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                             color: Colors.black),
                       ),
+                      TextField(
+                        decoration: InputDecoration(
+                          icon: Icon(Icons.keyboard_rounded),
+                          labelText: 'What we need to do?',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(20),
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
