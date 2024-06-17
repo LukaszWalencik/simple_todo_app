@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_todo_app/reusable/list_tile.dart';
+import 'package:simple_todo_app/reusable/text_field.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -58,7 +59,6 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 width: MediaQuery.of(context).size.width * 0.8,
-                height: MediaQuery.of(context).size.height * 0.8,
                 child: const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 20),
                   child: Column(
@@ -71,28 +71,10 @@ class HomeScreen extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                             color: Colors.black),
                       ),
-                      TextField(
-                        decoration: InputDecoration(
-                          icon: Icon(Icons.keyboard_rounded),
-                          labelText: 'What we need to do?',
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(20),
-                            ),
-                          ),
-                        ),
-                      ),
-                      TextField(
-                        decoration: InputDecoration(
-                          icon: Icon(Icons.question_mark_rounded),
-                          labelText: 'More descryption',
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(20),
-                            ),
-                          ),
-                        ),
-                      ),
+                      ReusableTextField(title: 'What we need to do?'),
+                      SizedBox(height: 20),
+                      ReusableTextField(title: 'More descryption'),
+                      SizedBox(height: 20),
                     ],
                   ),
                 ),
