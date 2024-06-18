@@ -59,22 +59,44 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 width: MediaQuery.of(context).size.width * 0.8,
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 20),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8.0, vertical: 20),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text(
+                      const Text(
                         'Add new task!',
                         style: TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
                             color: Colors.black),
                       ),
-                      ReusableTextField(title: 'What we need to do?'),
-                      SizedBox(height: 20),
-                      ReusableTextField(title: 'More descryption'),
-                      SizedBox(height: 20),
+                      const ReusableTextField(title: 'What we need to do?'),
+                      const SizedBox(height: 20),
+                      const ReusableTextField(title: 'More descryption'),
+                      const SizedBox(height: 20),
+                      Row(
+                        children: [
+                          ElevatedButton.icon(
+                            style: ButtonStyle(
+                                backgroundColor:
+                                    WidgetStateProperty.all(Colors.red)),
+                            icon: const Icon(
+                              Icons.cancel_outlined,
+                              color: Colors.white,
+                            ),
+                            label: const Text(
+                              'Cancel',
+                              style: const TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20),
+                            ),
+                            onPressed: () {},
+                          )
+                        ],
+                      )
                     ],
                   ),
                 ),
