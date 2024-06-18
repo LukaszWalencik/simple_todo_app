@@ -7,6 +7,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController titleTextController = TextEditingController();
+    TextEditingController descryptionTextController = TextEditingController();
     List<Map<String, dynamic>> mapTiles = [
       {
         'number': '1',
@@ -72,15 +74,20 @@ class HomeScreen extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                             color: Colors.black),
                       ),
-                      SizedBox(height: 30),
-                      const ReusableTextField(
+                      const SizedBox(height: 30),
+                      ReusableTextField(
+                        textInputAction: TextInputAction.next,
+                        textEditingController: titleTextController,
                         title: 'What we need to do?',
-                        icon: Icon(Icons.keyboard_rounded),
+                        icon: const Icon(Icons.keyboard_rounded),
                       ),
                       const SizedBox(height: 20),
-                      const ReusableTextField(
+                      ReusableTextField(
+                        textInputAction: TextInputAction.done,
+                        autofocus: false,
+                        textEditingController: descryptionTextController,
                         title: 'More descryption',
-                        icon: Icon(Icons.question_mark_rounded),
+                        icon: const Icon(Icons.question_mark_rounded),
                       ),
                       const SizedBox(height: 20),
                       Row(
@@ -101,7 +108,9 @@ class HomeScreen extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                   fontSize: 20),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).pop;
+                            },
                           ),
                           ElevatedButton.icon(
                             style: ButtonStyle(
