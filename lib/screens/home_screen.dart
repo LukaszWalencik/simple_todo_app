@@ -103,6 +103,23 @@ class HomeScreen extends StatelessWidget {
                             ),
                             onPressed: () {},
                           ),
+                          ElevatedButton.icon(
+                            style: ButtonStyle(
+                                backgroundColor:
+                                    WidgetStateProperty.all(Colors.green)),
+                            icon: const Icon(
+                              Icons.add_task_outlined,
+                              color: Colors.white,
+                            ),
+                            label: const Text(
+                              'Add',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20),
+                            ),
+                            onPressed: () {},
+                          )
                         ],
                       )
                     ],
