@@ -3,16 +3,18 @@ import 'package:flutter/material.dart';
 
 class ReusableTextField extends StatelessWidget {
   final String title;
+  final Icon icon;
   const ReusableTextField({
-    Key? key,
+    super.key,
     required this.title,
-  }) : super(key: key);
+    required this.icon,
+  });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
-        icon: const Icon(Icons.keyboard_rounded),
+        icon: icon,
         labelText: title,
         border: const OutlineInputBorder(
           borderRadius: BorderRadius.all(
