@@ -72,11 +72,19 @@ class HomeScreen extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                             color: Colors.black),
                       ),
-                      const ReusableTextField(title: 'What we need to do?'),
+                      SizedBox(height: 30),
+                      const ReusableTextField(
+                        title: 'What we need to do?',
+                        icon: Icon(Icons.keyboard_rounded),
+                      ),
                       const SizedBox(height: 20),
-                      const ReusableTextField(title: 'More descryption'),
+                      const ReusableTextField(
+                        title: 'More descryption',
+                        icon: Icon(Icons.question_mark_rounded),
+                      ),
                       const SizedBox(height: 20),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           ElevatedButton.icon(
                             style: ButtonStyle(
@@ -88,13 +96,13 @@ class HomeScreen extends StatelessWidget {
                             ),
                             label: const Text(
                               'Cancel',
-                              style: const TextStyle(
+                              style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 20),
                             ),
                             onPressed: () {},
-                          )
+                          ),
                         ],
                       )
                     ],
