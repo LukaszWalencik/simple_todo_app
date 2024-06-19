@@ -1,31 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:simple_todo_app/global/global.dart';
 import 'package:simple_todo_app/reusable/list_tile.dart';
 import 'package:simple_todo_app/reusable/text_field.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     TextEditingController titleTextController = TextEditingController();
     TextEditingController descryptionTextController = TextEditingController();
-    List<Map<String, dynamic>> mapTiles = [
-      {
-        'number': '1',
-        'title': 'title one',
-        'subtitle': 'subtitle one',
-      },
-      {
-        'number': '2',
-        'title': 'title two',
-        'subtitle': 'subtitle two',
-      },
-      {
-        'number': '3',
-        'title': 'title three',
-        'subtitle': 'subtitle three',
-      }
-    ];
+    List<String> tasks = sharedPreferences!.getStringList('task')!.toList();
+    // List<Map<String, dynamic>> mapTiles = [
+    //   {
+    //     'number': '1',
+    //     'title': 'title one',
+    //     'subtitle': 'subtitle one',
+    //   },
+    //   {
+    //     'number': '2',
+    //     'title': 'title two',
+    //     'subtitle': 'subtitle two',
+    //   },
+    //   {
+    //     'number': '3',
+    //     'title': 'title three',
+    //     'subtitle': 'subtitle three',
+    //   }
+    // ];
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
@@ -37,13 +44,10 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       body: ListView.builder(
-        itemCount: mapTiles.length,
+        itemCount: tasks.length,
         itemBuilder: (context, index) {
           return ReusableListTile(
-            number: mapTiles[index]['number'],
-            title: mapTiles[index]['title'],
-            subtitle: mapTiles[index]['subtitle'],
-          );
+              number: '0', title: tasks[0], subtitle: tasks[1]);
         },
       ),
       floatingActionButton: FloatingActionButton(
@@ -127,7 +131,15 @@ class HomeScreen extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                   fontSize: 20),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                sharedPreferences!.setStringList('task', [
+                                  titleTextController.text,
+                                  descryptionTextController.text
+                                ]);
+                                Navigator.pop(context, true);
+                              });
+                            },
                           )
                         ],
                       )
