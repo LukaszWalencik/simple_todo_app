@@ -109,7 +109,7 @@ class HomeScreen extends StatelessWidget {
                                   fontSize: 20),
                             ),
                             onPressed: () {
-                              Navigator.of(context).pop;
+                              Navigator.pop(context, true);
                             },
                           ),
                           ElevatedButton.icon(
