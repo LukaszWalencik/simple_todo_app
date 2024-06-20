@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "496830417198",
+    "project_id": "wasia-simple-todo-app",
+    "storage_bucket": "wasia-simple-todo-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:496830417198:android:d23ac0973768908b78d2bf",
+        "android_client_info": {
+          "package_name": "com.wasiatodo.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-mib0stI6oohrynP8FfOk4ukYZKUUI80"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
