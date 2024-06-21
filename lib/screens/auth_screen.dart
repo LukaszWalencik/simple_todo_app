@@ -9,6 +9,7 @@ class AuthScreen extends StatefulWidget {
 }
 
 class _AuthScreenState extends State<AuthScreen> {
+  TextEditingController loginController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +32,14 @@ class _AuthScreenState extends State<AuthScreen> {
             style: TextStyle(
                 color: Colors.black, fontSize: 32, fontWeight: FontWeight.bold),
           ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.05,
+          ),
+          ReusableTextField(
+              textInputAction: TextInputAction.next,
+              title: 'Login',
+              icon: const Icon(Icons.person),
+              textEditingController: loginController),
         ],
       ),
     );
