@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_todo_app/global/global.dart';
+import 'package:simple_todo_app/reusable/dialog_button.dart';
 import 'package:simple_todo_app/reusable/list_tile.dart';
 import 'package:simple_todo_app/reusable/text_field.dart';
 
@@ -97,22 +98,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          ElevatedButton.icon(
-                            style: ButtonStyle(
-                                backgroundColor:
-                                    WidgetStateProperty.all(Colors.red)),
-                            icon: const Icon(
-                              Icons.cancel_outlined,
-                              color: Colors.white,
-                            ),
-                            label: const Text(
-                              'Cancel',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20),
-                            ),
-                            onPressed: () {
+                          DialogButoon(
+                            color: Colors.red,
+                            icon: Icons.cancel_outlined,
+                            title: 'Cancel',
+                            onpressed: () {
                               Navigator.pop(context, true);
                             },
                           ),
