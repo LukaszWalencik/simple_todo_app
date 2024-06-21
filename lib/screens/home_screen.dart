@@ -106,31 +106,14 @@ class _HomeScreenState extends State<HomeScreen> {
                               Navigator.pop(context, true);
                             },
                           ),
-                          ElevatedButton.icon(
-                            style: ButtonStyle(
-                                backgroundColor:
-                                    WidgetStateProperty.all(Colors.green)),
-                            icon: const Icon(
-                              Icons.add_task_outlined,
-                              color: Colors.white,
-                            ),
-                            label: const Text(
-                              'Add',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20),
-                            ),
-                            onPressed: () {
-                              setState(() {
-                                sharedPreferences!.setStringList('task', [
-                                  titleTextController.text,
-                                  descryptionTextController.text
-                                ]);
-                                Navigator.pop(context, true);
-                              });
+                          DialogButoon(
+                            color: Colors.green,
+                            icon: Icons.add_task_outlined,
+                            title: 'Add',
+                            onpressed: () {
+                              Navigator.pop(context, true);
                             },
-                          )
+                          ),
                         ],
                       )
                     ],
