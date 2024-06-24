@@ -49,7 +49,15 @@ class _AuthScreenState extends State<AuthScreen> {
               textInputAction: TextInputAction.done,
               title: 'Password',
               icon: const Icon(Icons.lock),
-              textEditingController: passwordController)
+              textEditingController: passwordController),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+          TextButton(
+            onPressed: () {},
+            child: const Text(
+              'New use? Click here!',
+              style: TextStyle(color: Colors.purple, fontSize: 16),
+            ),
+          )
         ],
       ),
     );
