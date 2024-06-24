@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_todo_app/reusable/text_field.dart';
+import 'package:simple_todo_app/screens/register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -55,7 +56,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 textEditingController: passwordController),
             SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => RegisterScreen()));
+              },
               child: const Text(
                 'New use? Click here!',
                 style: TextStyle(color: Colors.purple, fontSize: 16),
