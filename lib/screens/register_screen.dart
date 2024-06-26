@@ -9,6 +9,7 @@ class RegisterScreen extends StatelessWidget {
     TextEditingController nameController = TextEditingController();
 
     TextEditingController emailController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
@@ -47,10 +48,18 @@ class RegisterScreen extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.02,
               ),
               ReusableTextField(
-                  textInputAction: TextInputAction.done,
+                  textInputAction: TextInputAction.next,
                   title: 'Email',
                   icon: const Icon(Icons.email_outlined),
                   textEditingController: emailController),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              ReusableTextField(
+                  textInputAction: TextInputAction.next,
+                  title: 'Password',
+                  icon: const Icon(Icons.password_outlined),
+                  textEditingController: passwordController),
             ],
           ),
         ),
