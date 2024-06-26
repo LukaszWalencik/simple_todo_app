@@ -7,9 +7,10 @@ class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextEditingController nameController = TextEditingController();
-
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
+    TextEditingController confirmPasswordController = TextEditingController();
+
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
@@ -60,6 +61,14 @@ class RegisterScreen extends StatelessWidget {
                   title: 'Password',
                   icon: const Icon(Icons.password_outlined),
                   textEditingController: passwordController),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              ReusableTextField(
+                  textInputAction: TextInputAction.next,
+                  title: 'Confirm password',
+                  icon: const Icon(Icons.password_outlined),
+                  textEditingController: confirmPasswordController),
             ],
           ),
         ),
