@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:simple_todo_app/reusable/text_field.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController nameController = TextEditingController();
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
@@ -17,19 +19,30 @@ class RegisterScreen extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.2,
-            ),
-            const Text(
-              'Create new account',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold),
-            ),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: Column(
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.2,
+              ),
+              const Text(
+                'Create new account',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.05,
+              ),
+              ReusableTextField(
+                  textInputAction: TextInputAction.next,
+                  title: 'Name',
+                  icon: const Icon(Icons.person),
+                  textEditingController: nameController),
+            ],
+          ),
         ),
       ),
     );
