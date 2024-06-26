@@ -9,9 +9,10 @@ class RegisterScreen extends StatelessWidget {
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
         backgroundColor: Colors.purple,
+        automaticallyImplyLeading: false,
         centerTitle: true,
         title: const Text(
-          'Simple TodoApp',
+          'Register to TodoApp',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
