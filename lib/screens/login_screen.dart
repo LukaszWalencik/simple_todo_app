@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_todo_app/reusable/login_or_register_button.dart';
+import 'package:simple_todo_app/reusable/login_register_accept_button.dart';
 import 'package:simple_todo_app/reusable/text_field.dart';
 import 'package:simple_todo_app/screens/register_screen.dart';
 
@@ -65,36 +66,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                   title: 'New user? Click here!'),
               SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-              InkWell(
-                onTap: () {},
-                child: Container(
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                    color: Colors.purple,
-                  ),
-                  height: MediaQuery.of(context).size.height * 0.05,
-                  width: MediaQuery.of(context).size.width * 0.8,
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.login_outlined,
-                        color: Colors.white,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        'Login',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  ),
-                ),
-              )
+              LoginRegisterAcceptButton(
+                  onTap: () {}, icons: Icons.login_outlined, title: 'Login')
             ],
           ),
         ),
