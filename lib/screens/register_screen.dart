@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simple_todo_app/reusable/login_or_register_button.dart';
 import 'package:simple_todo_app/reusable/text_field.dart';
 import 'package:simple_todo_app/screens/login_screen.dart';
 
@@ -71,16 +72,44 @@ class RegisterScreen extends StatelessWidget {
                   icon: const Icon(Icons.password_outlined),
                   textEditingController: confirmPasswordController),
               SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-              TextButton(
+              LoginOrRegisterTextButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => const LoginScreen()));
                 },
-                child: const Text(
-                  'Already registered? Click here!',
-                  style: TextStyle(color: Colors.purple, fontSize: 16),
-                ),
+                title: 'Already registered? Click here!',
               ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                    color: Colors.purple,
+                  ),
+                  height: MediaQuery.of(context).size.height * 0.05,
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.person_add_alt,
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        'Register',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ),
