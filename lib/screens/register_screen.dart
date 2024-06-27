@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_todo_app/reusable/text_field.dart';
+import 'package:simple_todo_app/screens/login_screen.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -69,6 +70,17 @@ class RegisterScreen extends StatelessWidget {
                   title: 'Confirm password',
                   icon: const Icon(Icons.password_outlined),
                   textEditingController: confirmPasswordController),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const LoginScreen()));
+                },
+                child: const Text(
+                  'Already registered? Click here!',
+                  style: TextStyle(color: Colors.purple, fontSize: 16),
+                ),
+              ),
             ],
           ),
         ),
