@@ -67,7 +67,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   title: 'New user? Click here!'),
               SizedBox(height: MediaQuery.of(context).size.height * 0.01),
               LoginRegisterAcceptButton(
-                  onTap: () {}, icons: Icons.login_outlined, title: 'Login')
+                onTap: () {},
+                icons: Icons.login_outlined,
+                title: 'Login',
+              )
             ],
           ),
         ),
