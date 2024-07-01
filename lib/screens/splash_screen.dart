@@ -25,6 +25,12 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   @override
+  void initState() {
+    timer();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Colors.purple,
