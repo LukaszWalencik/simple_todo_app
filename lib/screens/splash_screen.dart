@@ -1,6 +1,7 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
+import 'package:simple_todo_app/global/global.dart';
+import 'package:simple_todo_app/screens/home_screen.dart';
 import 'package:simple_todo_app/screens/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -15,11 +16,19 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
       const Duration(seconds: 3),
       () async {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => const LoginScreen(),
-          ),
-        );
+        if (firebaseAuth.currentUser == null) {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const LoginScreen(),
+            ),
+          );
+        } else {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const HomeScreen(),
+            ),
+          );
+        }
       },
     );
   }
@@ -32,16 +41,34 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Colors.purple,
       body: Center(
-        child: Text(
-          'Simple Todo App',
-          style: TextStyle(
-            fontSize: 30,
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Simple Todo App',
+              style: TextStyle(
+                fontSize: 30,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+            Text(
+              'Loading..',
+              style: TextStyle(
+                fontSize: 25,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+            CircularProgressIndicator(
+              backgroundColor: Colors.white,
+            )
+          ],
         ),
       ),
     );
